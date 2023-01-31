@@ -1,0 +1,1478 @@
+=== asst1-01-name.py ===
+sys161: System/161 release 1.14, compiled Jan 13 2015 13:55:47
+
+OS/161 base system version 1.11a
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Sidhanth's system version 0 (ASST1 #1)
+
+Cpu is MIPS r2000/r3000
+348k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]:
+=== asst1-01-name.py ===
+=== asst1-02-dbflags.py ===
+sys161: System/161 release 1.14, compiled Jan 13 2015 13:55:47
+
+OS/161 base system version 1.11a
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Sidhanth's system version 0 (ASST1 #1)
+
+Cpu is MIPS r2000/r3000
+348k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: ?o
+?o
+
+OS/161 operations menu
+    [s]       Shell                     [pf]      Print a file              
+    [p]       Other program             [cd]      Change directory          
+    [mount]   Mount a filesystem        [pwd]     Print current directory   
+    [dbflags] Debug flags               [sync]    Sync filesystems          
+    [unmount] Unmount a filesystem      [panic]   Intentional panic         
+    [bootfs]  Set "boot" filesystem     [q]       Quit and shut down        
+
+Operation took 0.059530000 seconds
+OS/161 kernel [? for menu]: dbflags
+dbflags
+
+OS/161 Debug Flags
+    [df 1 on/off]        DB_LOCORE         [df 7 on/off]        DB_EXEC           
+    [df 2 on/off]        DB_SYSCALL        [df 8 on/off]        DB_VFS            
+    [df 3 on/off]        DB_INTERRUPT      [df 9 on/off]        DB_SFS            
+    [df 4 on/off]        DB_DEVICE         [df 10 on/off]       DB_NET            
+    [df 5 on/off]        DB_THREADS        [df 11 on/off]       DB_NETFS          
+    [df 6 on/off]        DB_VM             [df 12 on/off]       DB_KMALLOC        
+
+Current value of dbflags is 0x0
+Operation took 0.067448920 seconds
+OS/161 kernel [? for menu]: df foo on
+df foo on
+Usage: df nr on/off
+Operation took 0.002338280 seconds
+Menu command failed: Invalid argument
+OS/161 kernel [? for menu]:df 2 bar
+ df 2 bar
+Usage: df nr on/off
+Operation took 0.002346080 seconds
+Menu command failed: Invalid argument
+OS/161 kernel [? for menu]: df 13 on
+df 13 on
+Usage: df nr on/off
+Operation took 0.002348320 seconds
+Menu command failed: Invalid argument
+OS/161 kernel [? for menu]: df -2 off
+df -2 off
+Usage: df nr on/off
+Operation took 0.002333600 seconds
+Menu command failed: Invalid argument
+OS/161 kernel [? for menu]:df 1 on
+ df 1 on
+Debug flag 1 toggled ON
+Operation took 0.002832920 seconds
+OS/161 kernel [? for menu]: dbflags
+dbflags
+
+OS/161 Debug Flags
+    [df 1 on/off]        DB_LOCORE         [df 7 on/off]        DB_EXEC           
+    [df 2 on/off]        DB_SYSCALL        [df 8 on/off]        DB_VFS            
+    [df 3 on/off]        DB_INTERRUPT      [df 9 on/off]        DB_SFS            
+    [df 4 on/off]        DB_DEVICE         [df 10 on/off]       DB_NET            
+    [df 5 on/off]        DB_THREADS        [df 11 on/off]       DB_NETFS          
+    [df 6 on/off]        DB_VM             [df 12 on/off]       DB_KMALLOC        
+
+Current value of dbflags is 0x1
+Operation took 0.067441760 seconds
+OS/161 kernel [? for menu]:df 5 on
+ df 5 on
+Debug flag 5 toggled ON
+Operation took 0.002909440 seconds
+OS/161 kernel [? for menu]:dbflags
+ dbflags
+
+OS/161 Debug Flags
+    [df 1 on/off]        DB_LOCORE         [df 7 on/off]        DB_EXEC           
+    [df 2 on/off]        DB_SYSCALL        [df 8 on/off]        DB_VFS            
+    [df 3 on/off]        DB_INTERRUPT      [df 9 on/off]        DB_SFS            
+    [df 4 on/off]        DB_DEVICE         [df 10 on/off]       DB_NET            
+    [df 5 on/off]        DB_THREADS        [df 11 on/off]       DB_NETFS          
+    [df 6 on/off]        DB_VM             [df 12 on/off]       DB_KMALLOC        
+
+Current value of dbflags is 0x11
+Operation took 0.067424040 seconds
+OS/161 kernel [? for menu]:df 1 off
+ df 1 off
+Debug flag 1 toggled OFF
+Operation took 0.002959000 seconds
+OS/161 kernel [? for menu]:dbflags
+ dbflags
+
+OS/161 Debug Flags
+    [df 1 on/off]        DB_LOCORE         [df 7 on/off]        DB_EXEC           
+    [df 2 on/off]        DB_SYSCALL        [df 8 on/off]        DB_VFS            
+    [df 3 on/off]        DB_INTERRUPT      [df 9 on/off]        DB_SFS            
+    [df 4 on/off]        DB_DEVICE         [df 10 on/off]       DB_NET            
+    [df 5 on/off]        DB_THREADS        [df 11 on/off]       DB_NETFS          
+    [df 6 on/off]        DB_VM             [df 12 on/off]       DB_KMALLOC        
+
+Current value of dbflags is 0x10
+Operation took 0.067558080 seconds
+OS/161 kernel [? for menu]: df 6 on
+df 6 on
+Debug flag 6 toggled ON
+Operation took 0.002911600 seconds
+OS/161 kernel [? for menu]: dbflags
+dbflags
+
+OS/161 Debug Flags
+    [df 1 on/off]        DB_LOCORE         [df 7 on/off]        DB_EXEC           
+    [df 2 on/off]        DB_SYSCALL        [df 8 on/off]        DB_VFS            
+    [df 3 on/off]        DB_INTERRUPT      [df 9 on/off]        DB_SFS            
+    [df 4 on/off]        DB_DEVICE         [df 10 on/off]       DB_NET            
+    [df 5 on/off]        DB_THREADS        [df 11 on/off]       DB_NETFS          
+    [df 6 on/off]        DB_VM             [df 12 on/off]       DB_KMALLOC        
+
+Current value of dbflags is 0x30
+O
+=== asst1-02-dbflags.py ===
+=== asst1-03-exittest.py ===
+sys161: System/161 release 1.14, compiled Jan 13 2015 13:55:47
+
+OS/161 base system version 1.11a
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Sidhanth's system version 0 (ASST1 #1)
+
+Cpu is MIPS r2000/r3000
+348k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: p testbin/os161testerprog 
+p testbin/os161testerprog 
+Unknown syscall 0
+=== asst1-03-exittest.py ===
+=== asst1-04-timeit.py ===
+sys161: System/161 release 1.14, compiled Jan 13 2015 13:55:47
+
+OS/161 base system version 1.11a
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Sidhanth's system version 0 (ASST1 #1)
+
+Cpu is MIPS r2000/r3000
+348k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: p testbin/os161testerprog 
+p testbin/os161testerprog 
+Unknown syscall 28
+Unknown syscall 28
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 0
+Operation took 4.602697960 seconds
+OS/161 kernel [? for menu]: 
+=== asst1-04-timeit.py ===
+=== asst1-05-sleep.py ===
+sys161: System/161 release 1.14, compiled Jan 13 2015 13:55:47
+
+OS/161 base system version 1.11a
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Sidhanth's system version 0 (ASST1 #1)
+
+Cpu is MIPS r2000/r3000
+348k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: p testbin/os161testerprog 
+p testbin/os161testerprog 
+Unknown syscall 28
+Unknown syscall 32
+Unknown syscall 28
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 0
+Operation took 4.603042040 seconds
+=== asst1-05-sleep.py ===
+=== asst1-06-console.py ===
+sys161: System/161 release 1.14, compiled Jan 13 2015 13:55:47
+
+OS/161 base system version 1.11a
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Sidhanth's system version 0 (ASST1 #1)
+
+Cpu is MIPS r2000/r3000
+348k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: p testbin/os161testerprog 
+p testbin/os161testerprog 
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 0
+Operation took 4.602957960 seconds
+OS/161 kernel [? for menu]: 
+
+OS/161 kernel [? for menu]: 66
+
+6: Command not found
+Menu command failed: Invalid argument
+OS/161 kernel [? for menu]: 
+
+OS/161 kernel [? for menu]: 
+
+OS/161 kernel [? for menu]: IIIIII
+=== asst1-06-console.py ===
+=== asst1-07-badcall.py ===
+sys161: System/161 release 1.14, compiled Jan 13 2015 13:55:47
+
+OS/161 base system version 1.11a
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Sidhanth's system version 0 (ASST1 #1)
+
+Cpu is MIPS r2000/r3000
+348k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: p testbin/os161testerprog 
+p testbin/os161testerprog 
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 6
+Unknown syscall 5
+Unknown syscall 0
+Operation took 4.602383680 seconds
+OS/161 kernel [? for menu]: ee
+=== asst1-07-badcall.py ===

@@ -1,0 +1,7 @@
+name, 2, 2
+dbflags, 10, 10
+exittest, 5, 0
+timeit, 9, 0
+sleep, 5, 0
+console, 15, 0
+badcall, 4, 0
